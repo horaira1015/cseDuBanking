@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="402.0" prefWidth="682.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AdminPageController">
+   <children>
+      <TabPane prefHeight="400.0" prefWidth="682.0" style="-fx-background-color: #A7D25C;" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="Home">
+               <content>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="371.0" prefWidth="70.0" />
+                        <VBox prefHeight="371.0" prefWidth="402.0">
+                           <children>
+                              <BorderPane prefHeight="396.0" prefWidth="399.0">
+                                 <top>
+                                    <Label prefHeight="54.0" prefWidth="386.0" text="Hello Admin. Welcome to information desk" BorderPane.alignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </top>
+                                 <center>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <HBox prefHeight="78.0" prefWidth="399.0">
+                                             <children>
+                                                <VBox prefHeight="64.0" prefWidth="214.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="33.0" prefWidth="211.0" text="Total Customer" />
+                                                      <Label fx:id="totalCurtomerSet" alignment="CENTER" prefHeight="18.0" prefWidth="214.0" text="--" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox prefHeight="59.0" prefWidth="192.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="42.0" prefWidth="192.0" text="Total Withdraw" />
+                                                      <Label fx:id="totalWithdraw" alignment="CENTER" prefHeight="52.0" prefWidth="192.0" text="--" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="78.0" prefWidth="399.0">
+                                             <children>
+                                                <VBox prefHeight="64.0" prefWidth="214.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="33.0" prefWidth="211.0" text="Total Deposit" />
+                                                      <Label fx:id="totalDeposits" alignment="CENTER" prefHeight="18.0" prefWidth="214.0" text="--" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox prefHeight="59.0" prefWidth="192.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="42.0" prefWidth="192.0" text="Total Transfer" />
+                                                      <Label fx:id="totalTransfer" alignment="CENTER" prefHeight="52.0" prefWidth="192.0" text="--" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="78.0" prefWidth="399.0">
+                                             <children>
+                                                <VBox prefHeight="64.0" prefWidth="214.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="33.0" prefWidth="211.0" text="Total Bank Balance" />
+                                                      <Label fx:id="bankbalance" alignment="CENTER" prefHeight="18.0" prefWidth="214.0" text="--" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox prefHeight="59.0" prefWidth="192.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="42.0" prefWidth="192.0" text="Total Customer Balance" />
+                                                      <Label fx:id="customerBalance" alignment="CENTER" prefHeight="52.0" prefWidth="192.0" text="--" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <Button mnemonicParsing="false" onAction="#backTomainMenu" prefHeight="46.0" prefWidth="140.0" text="Back" />
+                                       </children>
+                                    </VBox>
+                                 </center>
+                              </BorderPane>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="371.0" prefWidth="138.0" />
+                     </children>
+                  </HBox>
+               </content></Tab>
+          <Tab fx:id="startAllTransactions" text="View All Transactions">
+               <content>
+                  <BorderPane prefHeight="394.0" prefWidth="682.0">
+                     <center>
+                        <TableView fx:id="tableAlltr" prefHeight="200.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn prefWidth="140.00000607967377" text="Customer name" />
+                            <TableColumn prefWidth="113.5999755859375" text="Account Number" />
+                              <TableColumn prefWidth="157.5999755859375" text="Transaction type" />
+                              <TableColumn prefWidth="188.800048828125" text="Amount" />
+                          </columns>
+                        </TableView>
+                     </center>
+                     <bottom>
+                        <HBox prefHeight="42.0" prefWidth="682.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <VBox prefHeight="100.0" prefWidth="171.0" />
+                              <VBox prefHeight="46.0" prefWidth="304.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#refreshedAllTr" prefHeight="58.0" prefWidth="118.0" text="Refresh" />
+                                 </children>
+                              </VBox>
+                              <Button mnemonicParsing="false" onAction="#gotohome" prefHeight="58.0" prefWidth="130.0" text="Main Menu" />
+                           </children>
+                        </HBox>
+                     </bottom>
+                  </BorderPane>
+               </content></Tab>
+            <Tab text="View Customers info">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="682.0">
+                     <center>
+                        <TableView fx:id="tableallcust" prefHeight="330.0" prefWidth="682.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn prefWidth="214.40008544921875" text="Customer Name" />
+                            <TableColumn minWidth="0.0" prefWidth="164.7999267578125" text="Account Number" />
+                              <TableColumn prefWidth="220.0" text="Balance " />
+                          </columns>
+                        </TableView>
+                     </center>
+                     <bottom>
+                        <HBox prefHeight="43.0" prefWidth="682.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="198.0" />
+                              <VBox prefHeight="100.0" prefWidth="243.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#refreshallcust" prefHeight="66.0" prefWidth="126.0" text="Refresh" />
+                                 </children>
+                              </VBox>
+                              <Button mnemonicParsing="false" onAction="#gotohome" prefHeight="70.0" prefWidth="114.0" text="Main Menu" />
+                           </children>
+                        </HBox>
+                     </bottom>
+                  </BorderPane>
+               </content></Tab>
+          <Tab text="View Deposits">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView fx:id="depoTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn prefWidth="205.60003662109375" text="Customer Name" />
+                            <TableColumn prefWidth="220.0" text="Account Number" />
+                              <TableColumn prefWidth="174.39996337890625" text="Amount" />
+                          </columns>
+                        </TableView>
+                     </center>
+                     <bottom>
+                        <HBox prefHeight="46.0" prefWidth="682.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <VBox prefHeight="100.0" prefWidth="194.0" />
+                              <VBox prefHeight="100.0" prefWidth="169.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#refreshdepo" prefHeight="50.0" prefWidth="98.0" text="Refresh" />
+                                 </children>
+                              </VBox>
+                              <Button mnemonicParsing="false" onAction="#gotohome" prefHeight="67.0" prefWidth="110.0" text="Main Menu" />
+                           </children>
+                        </HBox>
+                     </bottom>
+                  </BorderPane>
+               </content></Tab>
+            <Tab text="View Withdraw">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView fx:id="withdrawTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn prefWidth="214.4000244140625" text="Customer Name" />
+                            <TableColumn prefWidth="200.79998779296875" text="Account Number" />
+                              <TableColumn prefWidth="184.79998779296875" text="Amount" />
+                          </columns>
+                        </TableView>
+                     </center>
+                     <bottom>
+                        <HBox prefHeight="46.0" prefWidth="682.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <VBox prefHeight="100.0" prefWidth="154.0" />
+                              <VBox prefHeight="100.0" prefWidth="238.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#refreshwithdraw" prefHeight="71.0" prefWidth="106.0" text="Refresh" />
+                                 </children>
+                              </VBox>
+                              <Button mnemonicParsing="false" onAction="#gotohome" prefHeight="56.0" prefWidth="91.0" text="Main Menu" />
+                           </children>
+                        </HBox>
+                     </bottom>
+                  </BorderPane>
+               </content></Tab>
+            <Tab text="View Transfers">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView fx:id="transferTable" prefHeight="371.0" prefWidth="598.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn prefWidth="200.800048828125" text="From Account Number" />
+                            <TableColumn prefWidth="169.5999755859375" text="To Account Number" />
+                              <TableColumn prefWidth="231.199951171875" text="Amount" />
+                          </columns>
+                        </TableView>
+                     </center>
+                     <bottom>
+                        <HBox prefHeight="50.0" prefWidth="682.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <VBox prefHeight="100.0" prefWidth="179.0" />
+                              <VBox prefHeight="100.0" prefWidth="246.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#refreshtransfer" prefHeight="67.0" prefWidth="106.0" text="Refresh" />
+                                 </children>
+                              </VBox>
+                              <Button mnemonicParsing="false" onAction="#gotohome" prefHeight="98.0" prefWidth="122.0" text="Main Menu" />
+                           </children>
+                        </HBox>
+                     </bottom>
+                  </BorderPane>
+               </content></Tab>
+            <Tab text="CustomerInfo">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <top>
+                        <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0" />
+                              <VBox prefHeight="100.0" prefWidth="154.0">
+                                 <children>
+                                    <HBox prefHeight="60.0" prefWidth="154.0" />
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="56.0" prefWidth="154.0" text="Label:  ">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font></Label>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="100.0" prefWidth="150.0">
+                                 <HBox prefHeight="55.0" prefWidth="150.0" />
+                                 <TextField fx:id="customerName" prefHeight="48.0" prefWidth="121.0" promptText="Customer Name" />
+                              </VBox>
+                              <HBox prefHeight="100.0" prefWidth="134.0">
+                                 <children>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                       <bottom>
+                                          <Button mnemonicParsing="false" onAction="#searchCustomer" prefHeight="40.0" prefWidth="78.0" text="Search" BorderPane.alignment="CENTER" />
+                                       </bottom>
+                                    </BorderPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </top>
+                     <left>
+                        <VBox prefHeight="271.0" prefWidth="327.0" BorderPane.alignment="CENTER">
+                           <TableView fx:id="table1" prefHeight="283.0" prefWidth="327.0">
+                              <columns>
+                                 <TableColumn prefWidth="174.39996945858002" text="Account Number" />
+                                 <TableColumn prefWidth="152.00001831054686" text="Balance" />
+                              </columns>
+                           </TableView>
+                        </VBox>
+                     </left>
+                     <center>
+                        <TableView fx:id="table2" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn prefWidth="120.00000154972076" text="Account Number" />
+                            <TableColumn prefWidth="133.60002899169922" text="Transaction" />
+                              <TableColumn prefWidth="75.0" text="Amount" />
+                          </columns>
+                        </TableView>
+                     </center>
+                  </BorderPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
